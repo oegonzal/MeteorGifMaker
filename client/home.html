@@ -1,39 +1,55 @@
+<head>
+    <title> Gif maker </title>
+</head>
+
 <body>
-<div class="container">
-    <header>
-        <h1>Gif Maker Test</h1>
-    </header>
-    <div>
+    <div class="container">
+        <header>
+            <h1>Gif Maker Test</h1>
+        </header>
+
         <div>
-            <div id="dropDiv" ondrop="" ondragover=""><span>Drag and <em>Drop</em> here</span></div>
+            <div>
+                <div id="dropDiv" ondrop="" ondragover="">
+                    <span>Drag and <em>Drop</em> here</span>
+                </div>
+                <br>
+            </div>
+            <div>
+                1.&nbsp;{{> gifmaker }}
+            </div>
+            <div>
+                2.&nbsp;{{> gifmaker }}
+            </div>
+            <div>
+                3.&nbsp;{{> gifmaker }}
+            </div>
+            <div>
+                4.&nbsp;{{> gifmaker }}
+            </div>
+            <div>
+                5.&nbsp;{{> gifmaker }}
+            </div>
             <br>
-        </div>
-        <div>
-            1.&nbsp;{{> gifmaker }}
-        </div>
-        <div>
-            2.&nbsp;{{> gifmaker }}
-        </div>
-        <div>
-            3.&nbsp;{{> gifmaker }}
-        </div>
-        <div>
-            4.&nbsp;{{> gifmaker }}
-        </div>
-        <div>
-            5.&nbsp;{{> gifmaker }}
-        </div>
-        <br>
-        <div>
-            <input type="number" placeholder="milliseconds" />
-        </div>
-        <br>
-        <div>
-            <button>Submit</button>
+            <div>
+                <input type="number" placeholder="milliseconds" />
+            </div>
+            <br>
+            <div>
+                {{> submit }} {{> reset}}
+            </div>
         </div>
     </div>
-</div>
 </body>
+
 <template name="gifmaker">
     <input type=file />
+</template>
+
+<template name="submit">
+    <button id="submit-btn"> Generate Gif </button>
+</template>
+
+<template name="reset">
+    <button id="reset-btn">Try Again!</button>
 </template>

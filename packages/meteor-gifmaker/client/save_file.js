@@ -1,20 +1,16 @@
-Meteor.saveFile = function(blob, name, path, type, callback) {
-    var fileReader = new FileReader(),
-        method, encoding = 'binary', type = type || 'binary';
-    switch (type) {
-        case 'image/png':
-        case 'image/jpeg':
-        case 'binary':
-            method = 'readAsBinaryString';
-            encoding = 'binary';
-            break;
-        default:
-            method = 'readAsBinaryString';
-            encoding = 'binary';
-            break;
+Meteor.saveFile = function (event) {
+    const files = event.target.files;
+    
+    for (let i = 0, ln = files.length; i < ln; i++) {
+        const currFile = new FS.File(files[i]);
+        Images.insert(currFile, function (error, fileObj) {
+            if (error) console.error(error);
+        });
     }
-    fileReader.onload = function(file) {
-       console.log(file);
-    }
-    fileReader[method](blob);
+}
+
+Meteor.returnToInitialState = function (event) {
+    Images.find().forEach(function (file) {
+        file.remove();
+    });
 }
