@@ -5,6 +5,9 @@ Meteor.saveFile = function (event) {
         const currFile = new FS.File(files[i]);
         Images.insert(currFile, function (error, fileObj) {
             if (error) console.error(error);
+            else {
+                console.log('Picture has been added successfully');
+            }
         });
     }
 }

@@ -13,10 +13,10 @@ Package.describe({
 Package.onUse(function (api) {
 	api.versionsFrom('1.1');
 	
-	api.use('cfs:standard-packages');
-	api.use('cfs:gridfs');
+	api.use('cfs:standard-packages@0.5.9');
+	api.use('cfs:gridfs@0.0.33');
 
-	api.addFiles('api/images.js', 'client');
+	api.addFiles('api/images.js');
 	api.addFiles('libs/gifshot/gifshot.js', 'client');
 	api.addFiles('client/save_file.js', 'client');
 	api.addFiles('client/generate_gif.js', 'client');
