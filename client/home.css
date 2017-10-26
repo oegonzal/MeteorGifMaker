@@ -19,10 +19,11 @@ body {
     background-color: #fff;
     border-radius: 4px;
     height: 100%;
+    overflow: auto;
 }
 
 .content-container {
-    height: 75%;
+    height: 85%;
     padding: 25px 4%;
     overflow: auto;
 }
