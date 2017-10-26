@@ -3,19 +3,29 @@ Meteor.getUploadedImagesCount = function() {
 }
 
 Meteor.initalizeDropzone = function () {
-    var dropzone = new Dropzone("form#dropzone", {
+    Dropzone.autoDiscover = false;
+    Dropzone.options.myDropzone = new Dropzone("form#dropzone", {
         maxFiles: 5,
         accept: onDrop
     });
-    // dropzone.disable();
+
+    Dropzone.options.myDropzone.on("addedfile", function() {
+        console.log('File added into dropzone');
+    });
 };
 
 Meteor.saveImage = function(imageFile) {
+    // debugger;
     Images.insert(imageFile, function (error, fileObj) {
         if (error) {
             console.error(error);
         } else {
-            console.log('Picture has been added successfully');
+            console.log(Meteor.getUploadedImagesCount());
+            if(Meteor.getUploadedImagesCount() >= 5) {
+                Dropzone.options.myDropzone.disable();
+            } else {
+                Dropzone.options.myDropzone.enable();
+            }
         }
     });
 };
@@ -23,4 +33,3 @@ Meteor.saveImage = function(imageFile) {
 function onDrop(imageFile) {
     Meteor.saveImage(imageFile);
 }
-

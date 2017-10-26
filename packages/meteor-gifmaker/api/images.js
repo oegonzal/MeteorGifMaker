@@ -14,8 +14,18 @@ Images = new FS.Collection("images", {
 // Allowed actions for collection
 Images.allow({
     'insert': function () {
-        Images.find().forEach(function (file) {
-            file.remove();
-        });
+        return true;
     }
 });
+
+Meteor.removeImagesFromDb = function() {
+    var storedImages = Images.find();
+    
+    storedImages.forEach(function (file) {
+        file.remove();
+    });
+}
+
+Meteor.startup(function() {
+    Meteor.removeImagesFromDb();
+})

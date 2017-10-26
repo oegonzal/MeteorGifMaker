@@ -30,5 +30,7 @@ Template.reset.helpers({
 });
 
 Template.totalImages.helpers({
-    'total': Meteor.getUploadedImagesCount()
+    'total': function() {
+        return Meteor.getUploadedImagesCount();
+    }
 });

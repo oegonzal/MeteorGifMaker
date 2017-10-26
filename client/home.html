@@ -9,15 +9,15 @@
         </header>
 
         <div class="content-container">
-            <div>
-                {{ > totalImages }}
-            </div>
 
             <div>
                 <div id="dropDiv" ondrop="" ondragover="">
-                    {{ > imageUpload }}
+                    {{> imageUpload }}
                 </div>
                 <br>
+                <div class="uploaded-msg">
+                    {{> totalImages }}
+                </div>
             </div>
             <div>
                 1.&nbsp;{{> gifmaker }}
@@ -55,25 +55,21 @@
 </template>
 
 <template name="submit">
-    <button id="submit-btn"> Generate Gif </button>
+    <button id="submit-btn" disabled={{disabled}}> Generate Gif </button>
 </template>
 
 <template name="reset">
-    <button id="reset-btn">Try Again!</button>
+    <button id="reset-btn" disabled={{disabled}}> Reset </button>
 </template>
 
 <template name="imageUpload">
     <form action="/file-upload" class="dropzone" id="dropzone">
-        <div class="dz-message">
-            <span>Drag and Drop OR file upload here</span>
-        </div>
+        <div class="dz-message"> Drag and Drop OR file upload here </div>
     </form>
 </template>
 
 <template name="totalImages">
     <div>
-        <h3> Total Photos Uploaded: {{ total }} 
-            <i> (Up to 5)</i>
-        </h3>
+        <h3> Uploaded: {{ total }} / 5 </h3>
     </div>
 </template>

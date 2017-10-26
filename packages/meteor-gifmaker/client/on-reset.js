@@ -1,13 +1,11 @@
 Meteor.onReset = function (event) {
-    removeImagesFromDb();
-    removeImagesFromDocument();
-    resetInputFields();
+    Meteor.resetApp();
 }
 
-function removeImagesFromDb() {
-    Images.find().forEach(function (file) {
-        file.remove();
-    });
+Meteor.resetApp = function() {
+    Meteor.removeImagesFromDb();
+    removeImagesFromDocument();
+    resetInputFields();
 }
 
 function removeImagesFromDocument() {

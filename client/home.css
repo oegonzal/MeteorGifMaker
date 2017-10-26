@@ -24,3 +24,27 @@ header {
     background-color: #32BDAF;
     padding: 15px 0;
 }
+
+.hint-text {
+    color: #999;
+}
+
+.dz-error-mark, .dz-error-message {
+    visibility: hidden;
+}
+
+.dropzone {
+    min-height: 250px;
+}
+
+.dz-message {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.uploaded-msg {
+    text-align: right;
+    color: #999;
+}
