@@ -18,8 +18,9 @@ Package.onUse(function (api) {
 
 	api.addFiles('api/images.js');
 	api.addFiles('libs/gifshot/gifshot.js', 'client');
-	api.addFiles('client/save_file.js', 'client');
-	api.addFiles('client/generate_gif.js', 'client');
+	api.addFiles('client/on-save-file.js', 'client');
+	api.addFiles('client/on-submit.js', 'client');
+	api.addFiles('client/on-reset.js', 'client');
 });
 
 
