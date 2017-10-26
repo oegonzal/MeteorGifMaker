@@ -22,7 +22,8 @@ Package.onUse(function (api) {
 	api.addFiles('client/dropzone.js', 'client');
 	api.addFiles('client/on-submit.js', 'client');
 	api.addFiles('client/on-reset.js', 'client');
-	api.addFiles('client/helper.js', 'client');
+	api.addFiles('client/image-helper.js', 'client');
+	
 });
 
 

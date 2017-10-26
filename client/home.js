@@ -11,7 +11,6 @@ Template.reset.events({
     'click': Meteor.onReset
 });
 
-
 /* ----- Helpers ------ */
 Template.submit.helpers({
     'disabled': function() {

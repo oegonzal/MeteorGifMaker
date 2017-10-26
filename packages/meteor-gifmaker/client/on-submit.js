@@ -28,7 +28,6 @@ function generateGIF(uploadedImages, delayInMs) {
         interval: delayInMs
     };
 
-    // debugger;
     gifshot.createGIF(params, handleGifCreation);
 }
 
