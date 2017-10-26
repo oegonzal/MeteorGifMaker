@@ -26,6 +26,8 @@ Meteor.removeImagesFromDb = function() {
     });
 }
 
+
+// Server side function: make sure Db is clean upon app startup
 Meteor.startup(function() {
     Meteor.removeImagesFromDb();
 })
