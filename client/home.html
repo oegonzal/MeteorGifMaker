@@ -5,13 +5,17 @@
 <body>
     <div class="container">
         <header>
-            <h1>Gif Maker Test</h1>
+            <h1>GIF Maker Test</h1>
         </header>
 
-        <div>
+        <div class="content-container">
+            <div>
+                {{ > totalImages }}
+            </div>
+
             <div>
                 <div id="dropDiv" ondrop="" ondragover="">
-                    <span>Drag and <em>Drop</em> here</span>
+                    {{ > imageUpload }}
                 </div>
                 <br>
             </div>
@@ -41,7 +45,7 @@
         </div>
 
         <div id="gif-display-container">
-            
+
         </div>
     </div>
 </body>
@@ -56,4 +60,20 @@
 
 <template name="reset">
     <button id="reset-btn">Try Again!</button>
+</template>
+
+<template name="imageUpload">
+    <form action="/file-upload" class="dropzone" id="dropzone">
+        <div class="dz-message">
+            <span>Drag and Drop OR file upload here</span>
+        </div>
+    </form>
+</template>
+
+<template name="totalImages">
+    <div>
+        <h3> Total Photos Uploaded: {{ total }} 
+            <i> (Up to 5)</i>
+        </h3>
+    </div>
 </template>

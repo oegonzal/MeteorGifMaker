@@ -10,3 +10,4 @@ insecure
 meteor-gifmaker
 cfs:standard-packages
 cfs:gridfs
+dbarrett:dropzonejs@3.10.3

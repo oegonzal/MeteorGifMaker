@@ -14,13 +14,15 @@ Package.onUse(function (api) {
 	api.versionsFrom('1.1');
 	
 	api.use('cfs:standard-packages@0.5.9');
-	api.use('cfs:gridfs@0.0.33');
+	api.use('cfs:gridfs@0.0.33'); 
+	api.use('dbarrett:dropzonejs@3.10.3');
 
 	api.addFiles('api/images.js');
 	api.addFiles('libs/gifshot/gifshot.js', 'client');
 	api.addFiles('client/on-save-file.js', 'client');
 	api.addFiles('client/on-submit.js', 'client');
 	api.addFiles('client/on-reset.js', 'client');
+	api.addFiles('client/helper.js', 'client');
 });
 
 

@@ -28,7 +28,7 @@ function generateGIF(uploadedImages, delayInMs) {
         interval: delayInMs
     };
 
-    debugger;
+    // debugger;
     gifshot.createGIF(params, handleGifCreation);
 }
 
@@ -37,19 +37,35 @@ function handleGifCreation(gifObj) {
     if(onError) {
         console.error('There was an error trying to generate the Gif');
     } else {
-        displayGIF(gifObj);
+        displayDownloadableGIF(gifObj);
     }
 }
 
-function displayGIF(gifObj) {
-    var image = gifObj.image, 
-        animatedImage = document.createElement('img');
-    animatedImage.src = image;
+function displayDownloadableGIF(gifObj) {
+    var gifUrl = gifObj.image;
+    var imageElement = makeImageElementOfGif(gifUrl);
     
-    appendImageToDisplayContainer(animatedImage);
+    var linkElement = makeImageElementDownloadable(imageElement, gifUrl);
+    appendGifToDisplayContainer(linkElement);
+    // debugger;
 }
 
-function appendImageToDisplayContainer(image) {
+function makeImageElementOfGif(imageUrl) {
+    var animatedImage = document.createElement('img');
+    animatedImage.src = imageUrl;
+    return animatedImage;
+}
+
+function makeImageElementDownloadable(imageElement, imageUrl) {
+    var linkElement = document.createElement('a');
+    linkElement.href = imageUrl;
+    linkElement.download = true;
+
+    linkElement.append(imageElement);
+    return linkElement;
+}
+
+function appendGifToDisplayContainer(image) {
     var displayContainer = document.getElementById('gif-display-container');
     displayContainer.append(image);
 }
