@@ -20,7 +20,6 @@ Meteor.saveImage = function(imageFile) {
         if (error) {
             console.error(error);
         } else {
-            console.log(Meteor.getUploadedImagesCount());
             if(Meteor.getUploadedImagesCount() >= 5) {
                 Dropzone.options.myDropzone.disable();
             } else {

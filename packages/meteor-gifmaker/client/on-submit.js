@@ -28,7 +28,7 @@ function generateGIF(uploadedImages, delayInMs) {
         interval: delayInMs
     };
 
-    // debugger;
+    debugger;
     gifshot.createGIF(params, handleGifCreation);
 }
 
@@ -67,5 +67,7 @@ function makeImageElementDownloadable(imageElement, imageUrl) {
 
 function appendGifToDisplayContainer(image) {
     var displayContainer = document.getElementById('gif-display-container');
+    displayContainer.innerHTML = '';
+    displayContainer.className = 'no-border';
     displayContainer.append(image);
 }

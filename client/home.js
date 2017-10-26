@@ -3,10 +3,6 @@ Template.imageUpload.rendered = Meteor.initalizeDropzone;
 
 
 /* ----- Events ------ */
-Template.gifmaker.events({
-    'change input': Meteor.saveFile
-});
-
 Template.submit.events({
     'click': Meteor.onSubmit
 });

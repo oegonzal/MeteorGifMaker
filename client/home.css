@@ -1,20 +1,29 @@
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #DDD;
+html {
+    height: 100%;
+    width: 100%;
 }
 
-.container {
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #DFDFDF;
     height: 100%;
+    margin: 0;
+    padding: 10px;
+}
+
+.center-container {
     width: 60%;
-    margin: 0px 20%;
+    margin: 0 20%;
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
     background-color: #fff;
     border-radius: 4px;
+    height: 100%;
 }
 
 .content-container {
-    padding: 25px 20px;
+    height: 75%;
+    padding: 25px 4%;
     overflow: auto;
 }
 
@@ -26,7 +35,9 @@ header {
 }
 
 .hint-text {
-    color: #999;
+    color: #888;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .dz-error-mark, .dz-error-message {
@@ -34,17 +45,62 @@ header {
 }
 
 .dropzone {
-    min-height: 250px;
+    min-height: 240px;
 }
 
 .dz-message {
-    text-align: center;
-    color: #888;
-    font-size: 18px;
-    font-weight: 500;
+    text-align: center !important;
+    position: absolute;
+    width: 70%;
+    left: 15%;
+    top: 45%;
 }
 
 .uploaded-msg {
-    text-align: right;
+    float: right;
     color: #999;
+}
+
+#gif-display-container {
+    height: 30%;
+    position: relative;
+}
+
+.dashed-border {
+    border: 1px dashed #DDD;
+}
+
+.no-border {
+    border: none;
+}
+
+#detail-area {
+    margin-top: 25px;
+}
+
+.left-margin-15 {
+    margin-left: 15px;
+}
+
+.input-container {
+    overflow: auto;
+}
+
+.delay-form {
+    width: 30%;
+    float: left;
+}
+
+.text-center {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    width: 70%;
+}
+
+.note-text {
+    font-weight: 600;
+    font-size: 24px;
+    color: #CCC;
 }

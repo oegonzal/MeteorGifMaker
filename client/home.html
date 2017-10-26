@@ -3,73 +3,52 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="center-container">
         <header>
             <h1>GIF Maker Test</h1>
         </header>
-
         <div class="content-container">
-
-            <div>
-                <div id="dropDiv" ondrop="" ondragover="">
-                    {{> imageUpload }}
-                </div>
-                <br>
+            <div id="dropDiv" ondrop="" ondragover="">
+                {{> imageUpload }}
+            </div>
+            <div id="detail-area">
                 <div class="uploaded-msg">
                     {{> totalImages }}
                 </div>
+                <div class="input-container">
+                    <div class="delay-form"> {{> delay}} </div>
+                    <div class="buttons"> {{> submit }} {{> reset}} </div>
+                </div>
             </div>
-            <div>
-                1.&nbsp;{{> gifmaker }}
+            <hr>
+            <div class="dashed-border" id="gif-display-container">
+                <div class="note-text text-center"> No GIF Generated to Display </div>
             </div>
-            <div>
-                2.&nbsp;{{> gifmaker }}
-            </div>
-            <div>
-                3.&nbsp;{{> gifmaker }}
-            </div>
-            <div>
-                4.&nbsp;{{> gifmaker }}
-            </div>
-            <div>
-                5.&nbsp;{{> gifmaker }}
-            </div>
-            <br>
-            <div>
-                <input type="number" placeholder="milliseconds" />
-            </div>
-            <br>
-            <div>
-                {{> submit }} {{> reset}}
-            </div>
-        </div>
-
-        <div id="gif-display-container">
-
         </div>
     </div>
 </body>
 
-<template name="gifmaker">
-    <input type=file />
-</template>
-
 <template name="submit">
-    <button id="submit-btn" disabled={{disabled}}> Generate Gif </button>
+    <button id="submit-btn" disabled={{disabled}} class="btn btn-default left-margin-15"> Create GIF </button>
 </template>
 
 <template name="reset">
-    <button id="reset-btn" disabled={{disabled}}> Reset </button>
+    <button id="reset-btn" disabled={{disabled}} class="btn btn-danger left-margin-15"> Reset </button>
 </template>
 
 <template name="imageUpload">
     <form action="/file-upload" class="dropzone" id="dropzone">
-        <div class="dz-message"> Drag and Drop OR file upload here </div>
+        <div class="dz-message hint-text"> Drag/drop OR click for file upload here </div>
     </form>
 </template>
 
 <template name="totalImages">
-    <div>
-        <h3> Uploaded: {{ total }} / 5 </h3>
+    <div class="hint-text"> Uploaded: {{ total }} / 5 </div>
+</template>
+
+<template name="delay">
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-clock-o"></i></span>
+        <input class="form-control" type="number" placeholder="Enter delay in ms" />
     </div>
 </template>
