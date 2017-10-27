@@ -12,6 +12,7 @@ Meteor.initalizeDropzone = function () {
 
 Meteor.resetDropzone = function() {
     Dropzone.options.myDropzone.removeAllFiles();
+    Dropzone.options.myDropzone.enable();
 }
 
 function onDrop(imageFile) {
